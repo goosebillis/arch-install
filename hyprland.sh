@@ -23,5 +23,6 @@ cd ~/.setup
 git clone --depth=1 https://github.com/JaKooLit/Arch-Hyprland.git ~/.setup/Arch-Hyprland
 cd ~/.setup/Arch-Hyprland
 cp ~/arch-install/nvidia.sh ~/.setup/Arch-Hyprland/install-scripts/
+chmod +x ~/.setup/Arch-Hyprland/install-scripts/nvidia.sh
 chmod +x install.sh
 ./install.sh
