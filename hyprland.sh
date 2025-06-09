@@ -1,5 +1,9 @@
 #!/bin/bash
 
+nmtui
+
+sudo vim /etc/pacman.conf
+
 mkdir ~/.setup
 cd ~/.setup
 curl https://mirror.cachyos.org/cachyos-repo.tar.xz -o cachyos-repo.tar.xz
@@ -9,7 +13,4 @@ sudo ./cachyos-repo.sh
 sudo pacman -Syu 
 
 cd ~/.setup
-git clone --depth=1 https://github.com/JaKooLit/Arch-Hyprland.git
-cd Arch-Hyprland
-chmod +x install.sh
-./install.sh
+sh <(curl -L https://raw.githubusercontent.com/JaKooLit/Arch-Hyprland/main/auto-install.sh)
