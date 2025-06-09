@@ -3,12 +3,12 @@ ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 hwclock --systohc
 vim /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "KEYMAP=us" >> /etc/vconsole.conf
-echo "arch-pc" >> /etc/hostname
+echo "LANG=en_GB.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=uk" >> /etc/vconsole.conf
+echo "arch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 arch-pc.localdomain arch-pc" >> /etc/hosts
+echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:Mar5ha11!. | chpasswd
 
 useradd -mG wheel david
