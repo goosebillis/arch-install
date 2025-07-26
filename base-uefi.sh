@@ -18,7 +18,7 @@ mount -o rw,noatime /dev/sda2 /mnt/boot
 mkdir -p /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 
-pacstrap -K /mnt base base-devel linux linux-firmware linux-headers git btrfs-progs grub efibootmgr grub-btrfs network-manager-applet dialog wpa_supplicant mtools dosfstools ntfs-3g inotify-tools timeshift vim networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber reflector openssh man sudo xdg-user-dirs xdg-utils bluez bluez-utils cups bash-completion openssh rsync acpi acpi_call firewalld flatpak sof-firmware nss-mdns acpid os-prober terminus-font
+pacstrap -K /mnt base base-devel linux linux-firmware linux-headers amd-ucode intel-ucode git btrfs-progs grub efibootmgr grub-btrfs network-manager-applet dialog wpa_supplicant mtools dosfstools ntfs-3g inotify-tools timeshift vim networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber reflector openssh man sudo xdg-user-dirs xdg-utils bluez bluez-utils cups bash-completion openssh rsync acpi acpi_call firewalld flatpak sof-firmware nss-mdns acpid os-prober terminus-font
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
