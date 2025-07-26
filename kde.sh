@@ -26,8 +26,8 @@ makepkg -si
 
 paru -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 
-paru -S findutils archlinux-keyring base-devel jq qt6ct yad btop fastfetch pacman-contrib yt-dlp imagemagick qt6-sv qt5ct wayland qt5-wayland qt6-wayland xorg-xwayland xwaylandvideobridge plasma-meta gtk-engine-murrine adobe-source-code-pro-fonts noto-fonts-emoji otf-font-awesome ttf-droid ttf-fira-code ttf-fantasque-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-victor-mono noto-fonts bluez bluez-utils kate ark dolphin dolphin-plugins okular pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-firmware ffmpegthumbs kdeconnect partitionmanager kdialog kitty flatpak-kcm p7zip unrar unzip sddm firefox
-
+paru -S findutils archlinux-keyring base-devel jq qt6ct yad btop fastfetch pacman-contrib yt-dlp imagemagick qt6-svg qt5ct wayland qt5-wayland qt6-wayland xorg-xwayland xwaylandvideobridge plasma-meta gtk-engine-murrine adobe-source-code-pro-fonts noto-fonts-emoji otf-font-awesome ttf-droid ttf-fira-code ttf-fantasque-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-victor-mono noto-fonts bluez bluez-utils kate ark dolphin dolphin-plugins okular pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse sof-firmware ffmpegthumbs kdeconnect partitionmanager kdialog alacritty flatpak-kcm p7zip unrar unzip sddm firefox 
+paru -S vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-tools vulkan-mesa-layers lib32-vulkan-mesa-layers
 systemctl --user disable --now pulseaudio.socket pulseaudio.service
 systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service 
 systemctl --user enable --now pipewire.service
