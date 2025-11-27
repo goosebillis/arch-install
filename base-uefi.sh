@@ -1,19 +1,19 @@
 #!/bin/bash
-fdisk /dev/sdb
+fdisk /dev/nvme0n1
 
-mkfs.fat -F32 /dev/sdb1
-mkfs.ext4 /dev/sdb2
-mkfs.btrfs /dev/sdb3 -f
+mkfs.fat -F32 /dev/nvme0n1p1
+mkfs.ext4 /dev/nvme0n1p2
+mkfs.btrfs /dev/nvme0n1p3 -f
 
-mount /dev/sdb3 /mnt
+mount /dev/nvme0n1p3 /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 
 umount /mnt
 
-mount -o rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,autodefrag,subvol=@ /dev/sdb3 /mnt
+mount -o rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,autodefrag,subvol=@ /dev/nvme0n1p3 /mnt
 mkdir -p /mnt/{boot,home}
-mount -o rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,autodefrag,subvol=@home /dev/sdb3 /mnt/home
+mount -o rw,noatime,compress=zstd:1,ssd,discard=async,space_cache=v2,autodefrag,subvol=@home /dev/nvme0n1p3 /mnt/home
 mount -o rw,noatime /dev/sdb2 /mnt/boot
 mkdir -p /mnt/boot/efi
 mount /dev/sdb1 /mnt/boot/efi
