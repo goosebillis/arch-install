@@ -33,15 +33,19 @@ sudo sed -i -e 's/^#DefaultLimitNOFILE/DefaultLimitNOFILE/' /etc/systemd/system.
 
 paru -S --needed schedtool minq-ananicy-git gamemode lib32-gamemode thermald tuned
 
+sudo cp ~/arch-install/zram-generator.conf /etc/systemd/
+
+systemctl daemon-reload
 sudo systemctl enable --now cronie.service
 sudo systemctl enable --now tuned.service
 sudo systemctl enable --now ananicy.service
 sudo tuned-adm profile throughput-performance
+sudo systemctl enable --now bluetooth.service
 
 systemctl --user disable --now pulseaudio.socket pulseaudio.service
 systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service 
 systemctl --user enable --now pipewire.service
-sudo systemctl enable --now bluetooth.service
+systemctl start /dev/zram0
 
 sudo groupadd input
 sudo usermod -aG input "$(whoami)"
