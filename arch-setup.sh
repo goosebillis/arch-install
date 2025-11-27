@@ -12,7 +12,7 @@ echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:Mar5ha11!. | chpasswd
 
 useradd -mG wheel david
-echo david:Mar5ha11!. | chpasswd
+echo david:9791 | chpasswd
 EDITOR=vim visudo
 
 echo "david ALL=(ALL) ALL" >> /etc/sudoers.d/david
