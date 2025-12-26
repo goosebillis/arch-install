@@ -1,0 +1,100 @@
+{
+  "niri/workspaces": {
+    "disable-click": true,
+    "format": "{icon}",
+    "format-icons": {
+      "active": " ",
+      "default": " ",
+    },
+  },
+  
+  "custom/media": {
+    "format": "{}",
+    "tooltip": true,
+    "tooltip-format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 50,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "exec": "/home/david/.config/waybar/modules/media-player.py 2> /dev/null",
+  },
+  
+  "niri/window": {
+    "icon": true,
+    "icon-size": 18,
+    "max-length": 30,
+  },
+  
+  "custom/updates": {
+    "format": "  {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "/home/david/.config/waybar/modules/count-updates.sh",
+    "restart-interval": 60,
+    "on-click": "alacritty --title Updater --config-file /home/david/.config/alacritty/float.toml -e /home/david/.config/waybar/modules/install-updates.sh",
+  },
+  
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "tooltip-format": "{desc} - {volume} %",
+    "format-muted": " ",
+    "on-click": "pamixer -t",
+    "format-icons": {
+      "headphone": " ",
+      "default": [" ", " "],
+    },
+        "scroll-step": 1,
+    "reverse-scrolling": true,
+  },
+
+"network": {
+  "format-wifi" : "{icon}",
+  "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+  "format-ethernet": "󰀂",
+"format-alt" : "󱛇",
+    "format-disconnected" : "󰖪",
+"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+"tooltip-format-disconnected": "Disconnected",
+    "on-click": "alacritty --title nmtui --config-file /home/david/.config/alacritty/float.toml -e nmtui connect",
+  "interval": 5,
+  "nospacing": 1,
+  },
+  
+  "cpu": {
+    "format": "  {usage}%",
+    "interval": 10,
+  },
+  
+    "memory": {
+        "interval": 5,
+        "format": "󰍛 {}%",
+        "max-length": 10
+  },
+  
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "{profile}",
+    "tooltip": true,
+    "format-icons": {
+      "performance": "󰓅",
+      "balanced": "󰾅",
+      "power-saver": "󰾆",
+    },
+  },
+
+  "clock": {
+    "tooltip-format": "{calendar}",
+    "format-alt": "  {:%a, %d %b %Y}",
+    "format": "  {:%I:%M %p}"
+  },
+
+  "tray": {
+    "spacing": 10,
+    },
+
+}
