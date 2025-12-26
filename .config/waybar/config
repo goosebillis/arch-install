@@ -1,0 +1,26 @@
+{
+  "layer": "top",
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "include": [
+    "/home/david/.config/waybar/modules.jsonc"
+  ],
+  "modules-left": [
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/updates",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "power-profiles-daemon"
+  ]
+}
