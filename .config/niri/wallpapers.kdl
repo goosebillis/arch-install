@@ -1,0 +1,6 @@
+// background for workspace and backdrop
+spawn-sh-at-startup "swww-daemon & swww img --outputs DP-2 /mnt/sda1/Pictures/Wallpapers/me-bg1.png && swww img --outputs HDMI-A-3 /mnt/sda1/Pictures/Wallpapers/me-bg2.png"
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
